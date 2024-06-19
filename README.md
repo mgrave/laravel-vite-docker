@@ -248,7 +248,7 @@ docker-compose run --rm artisan config:cache  # [OPT] Cachea el archivo de confi
 docker-compose run --rm artisan optimize  # [OPT] Optimiza la configuración de la aplicación.
 docker-compose run --rm artisan serve  # [OPT] Inicia el servidor de desarrollo de Laravel.
 docker-compose run --rm artisan route:list  # [OPT] Lista todas las rutas definidas en la aplicación.
-docker-compose run --rm artisan inertia:middleware  # Configura el middleware de Inertia.js.
+docker-compose run --rm artisan inertia:middleware  # [OPT] Configura el middleware de Inertia.js.
 
 
 docker-compose run --rm npm install  # Instala las dependencias definidas en package.json.
@@ -261,5 +261,4 @@ docker-compose run --rm npm add @vitejs/plugin-react  # [OPT] Añade el plugin R
 docker-compose run --rm --service-ports npm run dev  # [ERROR] Inicia el servidor de desarrollo utilizando Vite.
 
 
-#admin@gmail.com
-#pass1234
+#admin@gmail.com:password
