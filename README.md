@@ -209,3 +209,57 @@ Use this space to list resources you find helpful and would like to give credit 
 [Bootstrap-url]: https://getbootstrap.com
 [JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
 [JQuery-url]: https://jquery.com 
+
+
+
+
+
+
+
+
+
+
+
+## SECUENCIA DE COMANDOS DE DOCKER Y LARAVEL
+
+Estos comandos te ayudarán a configurar y ejecutar tu aplicación Laravel utilizando Docker y Composer.
+
+### Limpiar el sistema Docker
+```sh
+docker system prune -a  # [OPT] Limpia todos los contenedores, imágenes, redes y volúmenes no utilizados.
+
+docker-compose up --build nginx -d  # Construye y levanta el contenedor nginx en segundo plano.
+
+docker-compose run --rm composer clear-cache  # [OPT] Limpia la caché de Composer.
+docker-compose run --rm composer install  # Instala las dependencias definidas en composer.json.
+docker-compose run --rm composer dump-autoload  # [OPT] Re-genera el archivo autoload de Composer.
+docker-compose run --rm composer require laravel/breeze --dev  # [OPT] Añade laravel/breeze como dependencia de desarrollo.
+docker-compose run --rm composer require inertiajs/inertia-laravel  # [OPT VITE] Añade Inertia.js para Laravel.
+docker-compose run --rm composer require tightenco/ziggy  # [OPT] Añade Tightenco/Ziggy para manejo de rutas.
+docker-compose run --rm composer require sebastian/version  # [OPT] Añade sebastian/version.
+docker-compose run --rm composer update  # [OPT] Actualiza todas las dependencias de Composer.
+
+docker-compose run --rm laravel-migrate-seed  # Ejecuta migraciones y seeds.
+
+docker-compose run --rm artisan migrate:status  # [OPT] Verifica el estado de las migraciones.
+docker-compose run --rm artisan key:generate  # [OPT] Genera una nueva clave de aplicación.
+docker-compose run --rm artisan optimize  # [OPT] Optimiza el cargador automático.
+docker-compose run --rm artisan config:cache  # [OPT] Cachea el archivo de configuración.
+docker-compose run --rm artisan optimize  # [OPT] Optimiza la configuración de la aplicación.
+docker-compose run --rm artisan serve  # [OPT] Inicia el servidor de desarrollo de Laravel.
+docker-compose run --rm artisan route:list  # [OPT] Lista todas las rutas definidas en la aplicación.
+docker-compose run --rm artisan inertia:middleware  # Configura el middleware de Inertia.js.
+
+
+docker-compose run --rm npm install  # Instala las dependencias definidas en package.json.
+docker-compose run --rm npm install @myorg/privatepackage  # [ERROR] Instala un paquete privado específico.
+docker-compose run --rm npm run build  # Construye la aplicación para producción.
+docker-compose run --rm npm i react react-dom @inertiajs/inertia @inertiajs/inertia-react jsconfig.json @inertiajs/progress  # [OPT] Añade React y otros paquetes necesarios.
+docker-compose run --rm npm add @vitejs/plugin-react  # [OPT] Añade el plugin React para Vite.
+
+
+docker-compose run --rm --service-ports npm run dev  # [ERROR] Inicia el servidor de desarrollo utilizando Vite.
+
+
+#admin@gmail.com
+#pass1234

@@ -1,3 +1,5 @@
 .env
 docker/logs/*
 docker/mysql/*
+src/node_modules
+src/vendor

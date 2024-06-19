@@ -1,7 +1,4 @@
-version: '3'
-
-networks:
-  laravel:
+version: '3.8'
 
 services:
   nginx:
@@ -48,21 +45,21 @@ services:
       - laravel
 
   mysql:
-    image: mariadb:10.6
+    image: mysql:5.7
     container_name: mysql
     restart: unless-stopped
     tty: true
     ports:
-      - 3307:3306
+      - 3306:3306
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
       SERVICE_TAGS: dev
       SERVICE_NAME: mysql
     volumes:
-      - ./docker/mysql:/var/lib/mysql
+      - db_data:/var/lib/mysql
     networks:
       - laravel
     
@@ -133,6 +130,7 @@ services:
       PMA_USER: ${DB_USERNAME}
       PMA_PASSWORD: ${DB_PASSWORD}
       PMA_PORT: ${DB_PORT}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
     depends_on:
       - mysql
     ports:
@@ -220,3 +218,9 @@ services:
     networks:
       - laravel
 
+networks:
+  laravel:
+    driver: bridge
+
+volumes:
+  db_data:
